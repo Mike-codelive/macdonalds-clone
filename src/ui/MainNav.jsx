@@ -1,5 +1,4 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import './mainnav.css';
 import MobileNavBtn from './MobileNavBtn';
 import MainBtn from './MainBtn';
 import { useState } from 'react';
@@ -13,7 +12,7 @@ function MainNav() {
 
   return (
     <>
-      <header className="nav shadow-nav space-x flex items-center">
+      <header className="shadow-nav flex items-center justify-between">
         <div className="flex items-center">
           <NavLink to="./main">
             <img className="w-3pc h-3pc" src="/logo.jpg" alt="logo" />
