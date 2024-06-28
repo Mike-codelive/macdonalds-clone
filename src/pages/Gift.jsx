@@ -1,5 +1,5 @@
 function Gift() {
-  return <div>hello gift</div>;
+  return <section>hello gift</section>;
 }
 
 export default Gift;
