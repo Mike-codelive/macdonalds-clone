@@ -80,6 +80,22 @@
   color: #d90007;
 }
 
+.mobile_nav .view_full_menu {
+  min-width: 2in;
+  font-size: 14px;
+  line-height: 20px;
+  color: #292929;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #adadad;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0 1.5px 1.5px 0;
+  box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 0.1875rem;
+  padding: 13px 25px;
+  text-align: center;
+  display: inline-block;
+}
+
 .nav_movile_menu_cross {
   position: relative;
   display: block;

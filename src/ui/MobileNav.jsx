@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import MobileNavMenu from './MobileNavMenu';
-import { MagnifyingGlassIcon, MapPinIcon } from '@heroicons/react/16/solid';
+import {
+  ArrowDownIcon,
+  MagnifyingGlassIcon,
+  MapPinIcon,
+} from '@heroicons/react/16/solid';
 
 function MobileNav({ isOpen, onClose }) {
   const [isMobileNavMenuOpen, setIsMobileNavMenuOpen] = useState(false);
@@ -28,7 +32,12 @@ function MobileNav({ isOpen, onClose }) {
               onClick={() => toggleMobileNavMenu()}
               className="flex w-full justify-between"
             >
-              Our Menu <span className="nav_movile_menu_cross"></span>
+              Our Menu{' '}
+              {isMobileNavMenuOpen ? (
+                <ArrowDownIcon className="w-[20px]" />
+              ) : (
+                <span className="nav_movile_menu_cross"></span>
+              )}
             </button>
             <MobileNavMenu isOpen={isMobileNavMenuOpen} />
           </div>
@@ -44,7 +53,7 @@ function MobileNav({ isOpen, onClose }) {
             <button>Search</button>
             <MagnifyingGlassIcon className="w-[20px]" />
           </div>
-          <div className="my-[30px] flex w-full items-start justify-between">
+          <div className="mt-[30px] flex w-full items-start justify-between pb-[30px]">
             <button className="text-[14px]">Find Your Restaurant</button>
             <MapPinIcon className="mobile_geo_location w-[20px]" />
           </div>
