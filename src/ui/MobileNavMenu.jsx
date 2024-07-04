@@ -1,6 +1,7 @@
+import { NavLink } from 'react-router-dom';
 import MenuBtn from './MenuBtn';
 
-function MobileNavMenu({ isOpen }) {
+function MobileNavMenu({ isOpen, onClose }) {
   const itemBtn = {
     item1: { buttonName: 'breakfast', imageName: 'breakfast' },
     item2: { buttonName: 'Burguers', imageName: 'burguers' },
@@ -43,8 +44,14 @@ function MobileNavMenu({ isOpen }) {
   };
 
   return isOpen ? (
-    <div className="mt-[34px] flex flex-col">
-      <button className="view_full_menu">View Full Menu</button>
+    <div className="mt-[34px] flex flex-col items-start">
+      <NavLink
+        onClick={onClose}
+        to={'./menu'}
+        className="view_full_menu mb-[25px] mt-[37px]"
+      >
+        View Full Menu
+      </NavLink>
 
       {Object.entries(itemBtn).map(([key, item]) => (
         <MenuBtn
