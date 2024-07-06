@@ -12,17 +12,30 @@ function MainNav() {
 
   return (
     <>
-      <header className="shadow-nav flex items-center justify-between">
-        <div className="flex items-center">
-          <NavLink to="./main">
-            <img className="w-3pc h-3pc" src="/logo.jpg" alt="logo" />
-          </NavLink>
-          <MobileNavBtn />
+      <header className="pt-[15px] shadow-nav">
+        <div className="mx-auto flex w-full max-w-[1170px] items-center justify-between">
+          <div className="flex items-center">
+            <NavLink to="./main">
+              <img
+                className="block h-3pc w-3pc lg:hidden"
+                src="/logo.jpg"
+                alt="logo"
+              />
+              <img
+                className="hidden lg:block"
+                src="/logo_desk.jpg"
+                alt="logo"
+              />
+            </NavLink>
+            <MobileNavBtn />
+          </div>
+          <div className="mr-3">
+            <MainBtn py={8} px={25} openModal={() => openModal()}>
+              Order Now
+            </MainBtn>
+          </div>
+          <OrderModal isOpen={isModalOpen} onClose={closeModal}></OrderModal>
         </div>
-        <div className="mr-3">
-          <MainBtn openModal={() => openModal()}>Order Now</MainBtn>
-        </div>
-        <OrderModal isOpen={isModalOpen} onClose={closeModal}></OrderModal>
       </header>
       <Outlet />
     </>
