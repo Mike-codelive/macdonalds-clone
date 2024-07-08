@@ -1,9 +1,6 @@
-function MainBtn({ children, openModal = null, py = 15, px = 15, text = 16 }) {
+function MainBtn({ children, openModal, buttonClass }) {
   return (
-    <button
-      onClick={openModal}
-      className={`rounded-md bg-[#ffbc0d] py-[${py}px] px-[${px}px] text-[${text}px] text-[#292929]`}
-    >
+    <button onClick={openModal} className={buttonClass}>
       {children}
     </button>
   );

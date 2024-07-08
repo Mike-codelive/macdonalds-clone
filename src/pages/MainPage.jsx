@@ -35,7 +35,11 @@ function MainPage() {
               appear in your deals. Must opt in to Rewards. Excludes tax.
             </p>
             <NavLink to="/dowload-app">
-              <MainBtn py={8} px={25}>
+              <MainBtn
+                buttonClass={
+                  'rounded-md bg-[#ffbc0d] py-[13px] px-[25px] leading-[24px] text-[1pc] text-[#292929]'
+                }
+              >
                 Get a Free Big Mac in the App
               </MainBtn>
             </NavLink>
@@ -69,7 +73,11 @@ function MainPage() {
               registered trademark of The Coca-Cola Company.
             </p>
             <NavLink to="/dowload-app">
-              <MainBtn py={8} px={25}>
+              <MainBtn
+                buttonClass={
+                  'rounded-md bg-[#ffbc0d] py-[8px] px-[25px] leading-[24px] text-[1pc] text-[#292929]'
+                }
+              >
                 Get The Meal In The App
               </MainBtn>
             </NavLink>
@@ -106,7 +114,11 @@ function MainPage() {
               apply.
             </p>
             <NavLink to="/delivery">
-              <MainBtn py={8} px={25}>
+              <MainBtn
+                buttonClass={
+                  'rounded-md bg-[#ffbc0d] py-[8px] px-[25px] leading-[24px] text-[1pc] text-[#292929]'
+                }
+              >
                 Earn Points with McDelivery
               </MainBtn>
             </NavLink>
@@ -143,7 +155,11 @@ function MainPage() {
             <p className="mb-[9pt] pb-[15px] text-[10px] lg:mb-[18px]">
               *Per <a href="#">Zippia.com</a> as of 2021.
             </p>
-            <MainBtn py={8} px={25}>
+            <MainBtn
+              buttonClass={
+                'rounded-md bg-[#ffbc0d] py-[8px] px-[25px] leading-[24px] text-[1pc] text-[#292929]'
+              }
+            >
               Follow on Instagram @wearegolden
             </MainBtn>
           </div>
@@ -179,7 +195,11 @@ function MainPage() {
               restaurants. Delivery/other fees may apply.
             </p>
             <NavLink to="/dowload-app">
-              <MainBtn py={8} px={25}>
+              <MainBtn
+                buttonClass={
+                  'rounded-md bg-[#ffbc0d] py-[8px] px-[25px] leading-[24px] text-[1pc] text-[#292929]'
+                }
+              >
                 Order in the App
               </MainBtn>
             </NavLink>
@@ -218,7 +238,11 @@ function MainPage() {
             <p className="mb-[9pt] pb-[15px] text-[10px] lg:mb-[18px]">
               *While supplies last.
             </p>
-            <MainBtn py={8} px={25}>
+            <MainBtn
+              buttonClass={
+                'rounded-md bg-[#ffbc0d] py-[8px] px-[25px] leading-[24px] text-[1pc] text-[#292929]'
+              }
+            >
               Shop The Colab Now
             </MainBtn>
           </div>
@@ -248,7 +272,11 @@ function MainPage() {
               *At participating McDonald’s.
             </p>
             <NavLink to="/dowload-app">
-              <MainBtn py={8} px={25}>
+              <MainBtn
+                buttonClass={
+                  'rounded-md bg-[#ffbc0d] py-[8px] px-[25px] leading-[24px] text-[1pc] text-[#292929]'
+                }
+              >
                 Order Ahead in the App
               </MainBtn>
             </NavLink>
@@ -281,7 +309,11 @@ function MainPage() {
               *Mobile Order & Pay at participating McDonald’s.
             </p>
             <NavLink to="/dowload-app">
-              <MainBtn py={8} px={25}>
+              <MainBtn
+                buttonClass={
+                  'rounded-md bg-[#ffbc0d] py-[8px] px-[25px] leading-[24px] text-[1pc] text-[#292929]'
+                }
+              >
                 Get App Deals
               </MainBtn>
             </NavLink>

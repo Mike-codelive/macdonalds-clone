@@ -12,12 +12,15 @@ function OrderModal({ isOpen, onClose }) {
     };
 
     if (isOpen) {
+      document.body.classList.add('overflow-hidden');
       document.addEventListener('mousedown', handleClickOutside);
     } else {
+      document.body.classList.remove('overflow-hidden');
       document.removeEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
+      document.body.classList.remove('overflow-hidden');
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen, onClose]);

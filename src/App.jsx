@@ -14,13 +14,23 @@ import McEmailSub from './pages/McEmailSub';
 import SearchResults from './pages/SearchResults';
 import Rewards from './pages/Rewards';
 import RestaurantLocation from './pages/RestaurantLocation';
+import Footer from './ui/Footer';
+
+function Layout() {
+  return (
+    <>
+      <MainNav />
+      <Footer />
+    </>
+  );
+}
 
 function App() {
   return (
     <main>
       <BrowserRouter>
         <Routes>
-          <Route element={<MainNav />}>
+          <Route element={<Layout />}>
             <Route index element={<Navigate replace to="main" />} />
             <Route path="main" element={<MainPage />} />
             <Route path="menu" element={<Menu />} />

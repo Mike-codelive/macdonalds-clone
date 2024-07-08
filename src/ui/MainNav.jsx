@@ -30,7 +30,12 @@ function MainNav() {
             <MobileNavBtn />
           </div>
           <div className="mr-3">
-            <MainBtn py={8} px={25} openModal={() => openModal()}>
+            <MainBtn
+              buttonClass={
+                'rounded-md bg-[#ffbc0d] py-[8px] px-[25px] leading-[24px] text-[1pc] text-[#292929]'
+              }
+              openModal={() => openModal()}
+            >
               Order Now
             </MainBtn>
           </div>
