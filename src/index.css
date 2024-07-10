@@ -76,6 +76,11 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+footer hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .mobile_nav .mobile_geo_location {
   color: #d90007;
 }
@@ -124,7 +129,20 @@
   transform: translate(-50%, 0%);
 }
 
-.footer_links li {
+.footer_links_buttom li {
   cursor: pointer;
-  margin-bottom: 6px;
+  margin-bottom: 18px;
+  margin-right: 40px;
+}
+
+.mobile_footer_links li {
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 17px;
+}
+
+.mobile_footer_links_buttom li {
+  font-size: 12px;
+  margin-right: 10px;
+  margin-bottom: 18px;
 }
