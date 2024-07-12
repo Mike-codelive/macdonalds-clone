@@ -30,26 +30,16 @@ function MainNav() {
           l.parentElement.classList.remove('highlight');
         });
 
+        if (link.classList.contains('not_active')) {
+          return;
+        }
         // Add active class to clicked link and parent highlight
         link.classList.add('active');
         link.parentElement.classList.add('highlight');
       });
     });
-
-    const handleClickOutside = (event) => {
-      const activeLink = document.querySelector('.custom_link.active');
-      if (activeLink && !event.target.closest('.custom_link')) {
-        activeLink.classList.remove('active');
-        activeLink.parentElement.classList.remove('highlight');
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
   }, []);
+
   return (
     <>
       <header className="shadow-nav lg:pt-[15px]">
@@ -62,7 +52,7 @@ function MainNav() {
                 alt="logo"
               />
               <img
-                className="hidden lg:block"
+                className="custom_link hidden lg:block"
                 src="/logo_desk.jpg"
                 alt="logo"
               />
@@ -71,15 +61,17 @@ function MainNav() {
           </div>
           <div className="mr-3 flex w-full justify-end text-[14px] [grid-column-end:5] [grid-column-start:2] [grid-row-start:1] lg:max-h-[40px] lg:justify-between">
             <div className="hidden items-center lg:flex">
-              <NavLink to="./subemail">Sign Up for Email</NavLink>
+              <NavLink className="custom_link not_active" to="./subemail">
+                Sign Up for Email
+              </NavLink>
             </div>
             <div className="flex items-center">
-              <NavLink to="./search">
+              <NavLink className="custom_link not_active" to="./search">
                 <span className="mr-[30px] hidden lg:flex">
                   <MagnifyingGlassIcon className="w-full max-w-[20px]" /> Search
                 </span>
               </NavLink>
-              <NavLink to="./reslocation">
+              <NavLink className="custom_link not_active" to="./reslocation">
                 <span className="mr-[30px] hidden lg:flex">
                   <MapPinIcon className="w-full max-w-[20px] text-[#d90007]" />
                   <span className="text-[#006bae] underline">
@@ -98,13 +90,13 @@ function MainNav() {
             </div>
           </div>
           <nav className="navbar_bottom_links mt-[26px] hidden whitespace-nowrap [grid-column-end:5] [grid-column-start:2] [grid-row-start:2] lg:flex">
-            <div className="pb-[23px] pl-[5px] pr-[25px]">
+            <div className="ml-[5px] mr-[25px] pb-[23px]">
               <span className="flex items-center">
                 Our Menu
                 <ChevronDownIcon className="w-[25px] px-[6px]" />
               </span>
             </div>
-            <div className="pb-[23px] pl-[5px] pr-[25px]">
+            <div className="ml-[5px] mr-[25px] pb-[23px]">
               <NavLink
                 to="dowload-app"
                 className="custom_link flex items-center"
@@ -112,33 +104,33 @@ function MainNav() {
                 Download App
               </NavLink>
             </div>
-            <div className="pb-[23px] pl-[5px] pr-[25px]">
+            <div className="ml-[5px] mr-[25px] pb-[23px]">
               <NavLink to="rewards" className="custom_link flex items-center">
                 MyMcDonald's Rewards
               </NavLink>
             </div>
-            <div className="pb-[23px] pl-[5px] pr-[25px]">
-              <NavLink to="deals" className="flex items-center">
+            <div className="ml-[5px] mr-[25px] pb-[23px]">
+              <NavLink to="deals" className="custom_link flex items-center">
                 Exclusive Deals
               </NavLink>
             </div>
-            <div className="pb-[23px] pl-[5px] pr-[25px]">
-              <NavLink to="our-food" className="flex items-center">
+            <div className="ml-[5px] mr-[25px] pb-[23px]">
+              <NavLink to="our-food" className="custom_link flex items-center">
                 About Our Food
               </NavLink>
             </div>
-            <div className="pb-[23px] pl-[5px] pr-[25px]">
-              <NavLink to="delivery" className="flex items-center">
+            <div className="ml-[5px] mr-[25px] pb-[23px]">
+              <NavLink to="delivery" className="custom_link flex items-center">
                 McDelivery®
               </NavLink>
             </div>
-            <div className="pb-[23px] pl-[5px] pr-[25px]">
-              <NavLink to="locate" className="flex items-center">
+            <div className="ml-[5px] mr-[25px] pb-[23px]">
+              <NavLink to="locate" className="custom_link flex items-center">
                 Locate
               </NavLink>
             </div>
-            <div className="pb-[23px] pl-[5px]">
-              <NavLink to="gift" className="flex items-center">
+            <div className="ml-[5px] pb-[23px]">
+              <NavLink to="gift" className="custom_link flex items-center">
                 Gift Cards
               </NavLink>
             </div>

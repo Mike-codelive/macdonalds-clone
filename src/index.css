@@ -164,5 +164,9 @@ footer picture {
 }
 
 .highlight {
-  border-bottom: 2px solid red;
+  border-bottom: 5px solid #d90007;
+}
+
+a.not_active {
+  border-bottom: unset;
 }
