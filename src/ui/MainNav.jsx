@@ -8,23 +8,25 @@ import {
   MagnifyingGlassIcon,
   MapPinIcon,
 } from '@heroicons/react/16/solid';
+import MenuModal from './MenuModal';
 
 function MainNav() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   useEffect(() => {
     const links = document.querySelectorAll('.custom_link');
-
     links.forEach((link) => {
       if (link.classList.contains('active')) {
         link.parentElement.classList.add('highlight');
       }
 
       link.addEventListener('click', () => {
-        // Remove active class from all links and parent highlight
         links.forEach((l) => {
           l.classList.remove('active');
           l.parentElement.classList.remove('highlight');
@@ -33,7 +35,6 @@ function MainNav() {
         if (link.classList.contains('not_active')) {
           return;
         }
-        // Add active class to clicked link and parent highlight
         link.classList.add('active');
         link.parentElement.classList.add('highlight');
       });
@@ -42,17 +43,17 @@ function MainNav() {
 
   return (
     <>
-      <header className="shadow-nav lg:pt-[15px]">
-        <div className="mx-auto flex w-full max-w-[1170px] grid-cols-[165px_auto_auto_auto] lg:grid">
+      <header className="shadow-nav lg:relative lg:pt-[15px]">
+        <div className="mx-auto flex w-full max-w-[1170px] select-none grid-cols-[165px_auto_auto_auto] lg:grid">
           <div className="flex min-w-[165px] items-center [grid-column-start:1] [grid-row-end:3] [grid-row-start:1] lg:items-center">
             <NavLink to="./main">
               <img
-                className="block h-3pc w-3pc lg:hidden"
+                className="custom_link not_active block h-3pc w-3pc lg:hidden"
                 src="/logo.jpg"
                 alt="logo"
               />
               <img
-                className="custom_link hidden lg:block"
+                className="custom_link not_active hidden lg:block"
                 src="/logo_desk.jpg"
                 alt="logo"
               />
@@ -89,11 +90,16 @@ function MainNav() {
               </MainBtn>
             </div>
           </div>
-          <nav className="navbar_bottom_links mt-[26px] hidden whitespace-nowrap [grid-column-end:5] [grid-column-start:2] [grid-row-start:2] lg:flex">
+          <nav className="navbar_bottom_links mt-[26px] hidden [grid-column-end:5] [grid-column-start:2] [grid-row-start:2] md:whitespace-nowrap lg:flex">
             <div className="ml-[5px] mr-[25px] pb-[23px]">
-              <span className="flex items-center">
+              <span
+                onClick={toggleMenu}
+                className={`${isMenuOpen ? 'font-bold' : ''} flex items-center`}
+              >
                 Our Menu
-                <ChevronDownIcon className="w-[25px] px-[6px]" />
+                <ChevronDownIcon
+                  className={`${isMenuOpen ? 'rotate-180' : ''} linear w-[30px] px-[6px] transition-all duration-[.25s]`}
+                />
               </span>
             </div>
             <div className="ml-[5px] mr-[25px] pb-[23px]">
@@ -139,6 +145,7 @@ function MainNav() {
           <OrderModal isOpen={isModalOpen} onClose={closeModal}></OrderModal>
         </div>
       </header>
+      {isMenuOpen ? <MenuModal /> : null}
       <Outlet />
     </>
   );
