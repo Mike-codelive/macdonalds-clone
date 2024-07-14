@@ -33,10 +33,13 @@ function MainNav() {
         });
 
         if (link.classList.contains('not_active')) {
+          setIsMenuOpen(false);
           return;
         }
         link.classList.add('active');
         link.parentElement.classList.add('highlight');
+
+        setIsMenuOpen(false);
       });
     });
   }, []);
