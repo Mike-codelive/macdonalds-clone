@@ -1,7 +1,7 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import MobileNavBtn from './MobileNavBtn';
 import MainBtn from './MainBtn';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import OrderModal from './OrderModal';
 import {
   ChevronDownIcon,
@@ -13,17 +13,26 @@ import MenuModal from './MenuModal';
 function MainNav() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  const location = useLocation();
+
   useEffect(() => {
     const links = document.querySelectorAll('.custom_link');
     links.forEach((link) => {
-      if (link.classList.contains('active')) {
-        link.parentElement.classList.add('highlight');
+      const parent = link.parentElement;
+      if (
+        link.classList.contains('active') &&
+        !link.classList.contains('not_active')
+      ) {
+        parent.classList.add('highlight');
+      } else {
+        parent.classList.remove('highlight');
       }
 
       link.addEventListener('click', () => {
@@ -42,7 +51,25 @@ function MainNav() {
         setIsMenuOpen(false);
       });
     });
-  }, []);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -93,7 +120,7 @@ function MainNav() {
               </MainBtn>
             </div>
           </div>
-          <nav className="navbar_bottom_links mt-[26px] hidden [grid-column-end:5] [grid-column-start:2] [grid-row-start:2] md:whitespace-nowrap lg:flex">
+          <nav className="navbar_bottom_links mt-[26px] hidden [grid-column-end:5] [grid-column-start:2] [grid-row-start:2] lg:flex xl:whitespace-nowrap">
             <div className="ml-[5px] mr-[25px] pb-[23px]">
               <span
                 onClick={toggleMenu}

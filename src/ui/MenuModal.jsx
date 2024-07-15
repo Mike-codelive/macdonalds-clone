@@ -1,6 +1,6 @@
 function MenuModal() {
   return (
-    <section className="menu_modal absolute left-0 right-0 top-auto hidden select-none bg-[#fff] lg:block">
+    <section className="menu_modal absolute left-0 right-0 top-auto z-[999999] hidden select-none bg-[#fff] lg:block">
       <div className="mx-auto w-full max-w-[765pt] px-[20px] pb-[50px] pt-[44px]">
         <ul className="grid grid-cols-[auto_auto_auto] gap-[15px]">
           <li className="flex cursor-pointer items-center">
