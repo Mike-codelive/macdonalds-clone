@@ -13,6 +13,12 @@ export default {
       animation: {
         bounceRight: 'bounceRight 0.5s ease-in-out',
       },
+      colors: {
+        linkcolor: '#006bae',
+      },
+      fontSize: {
+        'md-36': '36px',
+      },
       width: {
         '3pc': '3pc',
         '72px': '72px',
