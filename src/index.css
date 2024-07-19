@@ -150,6 +150,10 @@ footer picture {
   cursor: pointer;
 }
 
+.footer_links li {
+  margin-bottom: 6px;
+}
+
 .footer_links_buttom li {
   cursor: pointer;
   margin-bottom: 18px;

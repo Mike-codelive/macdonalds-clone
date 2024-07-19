@@ -147,7 +147,9 @@ function Footer() {
                 alt="mc logo"
               />
             </picture>
-            <p>© 2017 - 2024 McDonald's. All Rights Reserved</p>
+            <p className="text-right">
+              © 2017 - 2024 McDonald's. All Rights Reserved
+            </p>
           </div>
         </div>
       </div>
