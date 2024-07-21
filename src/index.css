@@ -22,10 +22,20 @@ h1 {
   margin-bottom: 18px;
 }
 
+.modal_container h1 {
+  font-size: 16px;
+  margin: 0;
+  line-height: unset;
+}
+
 h2 {
   font-size: 36px;
   font-weight: 700;
   line-height: 40px;
+}
+
+footer h2 {
+  font-size: 1pc;
 }
 
 h3 {
