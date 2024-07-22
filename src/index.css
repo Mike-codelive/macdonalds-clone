@@ -34,6 +34,16 @@ h2 {
   line-height: 40px;
 }
 
+.main_page h2 {
+  font-weight: normal;
+  line-height: normal;
+}
+
+.delivery_page h2 {
+  font-weight: normal;
+  line-height: normal;
+}
+
 footer h2 {
   font-size: 1pc;
 }
@@ -239,4 +249,15 @@ a.not_active {
   box-shadow:
     0 0.0625rem 0.5rem 0 rgba(0, 0, 0, 0.04),
     0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.04);
+}
+
+.delivery_page_card {
+  border: 1px solid #cecece;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.09375rem 0.09375rem 0 rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.delivery_page_card img {
+  object-fit: cover;
 }

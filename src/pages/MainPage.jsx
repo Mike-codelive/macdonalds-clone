@@ -3,7 +3,7 @@ import MainBtn from '../ui/MainBtn';
 
 function MainPage() {
   return (
-    <section className="lg:text-[1pc]">
+    <section className="main_page lg:text-[1pc]">
       <div className="mx-2 max-w-[1170px] pt-[50px] lg:mx-auto lg:pt-[100px]">
         <div className="flex flex-wrap">
           <div className="px-[15px] lg:w-[65.6%]">
