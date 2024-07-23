@@ -18,6 +18,7 @@ export default {
       },
       colors: {
         linkcolor: '#006bae',
+        customBlack: '#292929',
       },
       fontSize: {
         'md-36': '36px',
@@ -25,6 +26,9 @@ export default {
       width: {
         '3pc': '3pc',
         '72px': '72px',
+      },
+      borderWidth: {
+        2: '2px',
       },
       height: {
         '3pc': '3pc',
