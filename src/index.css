@@ -261,3 +261,14 @@ a.not_active {
 .delivery_page_card img {
   object-fit: cover;
 }
+
+.form-options_field_description::after {
+  content: ' ';
+  background-color: #ffbc0d;
+  border: 1px solid #ffbc0d;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 9px;
+  border-radius: 2px;
+}
