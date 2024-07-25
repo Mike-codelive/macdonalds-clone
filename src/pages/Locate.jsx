@@ -7,17 +7,25 @@ import {
   MapPinIcon,
 } from '@heroicons/react/16/solid';
 import Map from '../ui/Map';
+import MobileFilter from '../ui/MobileFilter';
 
 function Locate() {
   const [isLocateFocused, setIsLocateFocused] = useState(false);
   const [locateValue, setLocateValue] = useState('');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [selectedMiles, setSelectedMiles] = useState('5');
+  const [isFilterMobileOpen, setIsFilterMobileOpen] = useState(false);
 
   const toggleFilter = () => setIsFilterOpen(!isFilterOpen);
+  const toggleMobileFilter = () => setIsFilterMobileOpen(!isFilterMobileOpen);
+  const closeMobileFilter = () => setIsFilterMobileOpen(false);
 
   const handleLocateFocus = () => setIsLocateFocused(true);
   const handleLocateBlur = () => setIsLocateFocused(false);
   const handleLocateChange = (e) => setLocateValue(e.target.value);
+  const handleRadioChange = (e) => {
+    setSelectedMiles(e.target.value);
+  };
 
   const isLocateLabelUp = isLocateFocused || locateValue !== '';
 
@@ -25,7 +33,7 @@ function Locate() {
     <section>
       <div className="mx-[9pt] max-w-[1170px] pt-[50px] lg:mx-auto lg:pt-[100px]">
         <div>
-          <div className="border-customGray mb-[24px] flex flex-wrap border-b-2 px-[10px] pt-[50px] lg:flex-nowrap">
+          <div className="border-customGray mb-[24px] flex border-b-2 px-[10px] pt-[50px] lg:flex-nowrap">
             <div className="relative w-full flex-[90%] lg:flex-[70%]">
               <label
                 className={`absolute bottom-0 text-[18px] transition-all duration-300 ease-in-out lg:text-[50px] ${
@@ -77,10 +85,25 @@ function Locate() {
             </MainBtn>
             <div className="flex flex-col px-[10px] lg:block">
               <button
-                className="flex items-center justify-center gap-[5px] rounded-md px-[25px] py-[8px] text-[1pc] leading-[24px] text-[#292929]"
+                className="flex items-center justify-center gap-[5px] rounded-md px-[25px] py-[8px] text-[1pc] leading-[24px] text-[#292929] lg:hidden"
+                onClick={toggleMobileFilter}
+              >
+                <AdjustmentsHorizontalIcon className="w-[18px] flex-shrink-0 text-linkcolor" />
+                Filters
+                <ChevronDownIcon
+                  className={`${
+                    isFilterOpen ? 'rotate-180' : ''
+                  } w-[18px] flex-shrink-0 transition-transform duration-300 ease-in-out`}
+                />
+              </button>
+              {isFilterMobileOpen ? (
+                <MobileFilter onClose={closeMobileFilter} />
+              ) : null}
+              <button
+                className="hidden items-center justify-center gap-[5px] rounded-md px-[25px] py-[8px] text-[1pc] leading-[24px] text-[#292929] lg:flex"
                 onClick={toggleFilter}
               >
-                <AdjustmentsHorizontalIcon className="text-linkcolor w-[18px] flex-shrink-0" />
+                <AdjustmentsHorizontalIcon className="w-[18px] flex-shrink-0 text-linkcolor" />
                 Filters
                 <ChevronDownIcon
                   className={`${
@@ -89,7 +112,7 @@ function Locate() {
                 />
               </button>
               {isFilterOpen ? (
-                <div className="pt-[40px]">
+                <div className="hidden pt-[40px] lg:block">
                   <fieldset>
                     <legend className="mb-[20px]">Services</legend>
                     <ul className="mb-[2.5rem] flex flex-wrap">
@@ -340,9 +363,11 @@ function Locate() {
                         <label className="flex items-center">
                           <input
                             className="locate_custom_radio mr-[15px]"
-                            checked
                             name="radio-filter"
                             type="radio"
+                            value={5}
+                            checked={selectedMiles === '5'}
+                            onChange={handleRadioChange}
                           />
                           <span className="mr-[25px]">5</span>
                         </label>
@@ -351,6 +376,9 @@ function Locate() {
                             className="locate_custom_radio mr-[15px]"
                             name="radio-filter"
                             type="radio"
+                            value={10}
+                            checked={selectedMiles === '10'}
+                            onChange={handleRadioChange}
                           />
                           <span className="mr-[25px]">10</span>
                         </label>
@@ -359,6 +387,9 @@ function Locate() {
                             className="locate_custom_radio mr-[15px]"
                             name="radio-filter"
                             type="radio"
+                            value={20}
+                            checked={selectedMiles === '20'}
+                            onChange={handleRadioChange}
                           />
                           <span className="mr-[25px]">20</span>
                         </label>
@@ -367,6 +398,9 @@ function Locate() {
                             className="locate_custom_radio mr-[15px]"
                             name="radio-filter"
                             type="radio"
+                            value={50}
+                            checked={selectedMiles === '50'}
+                            onChange={handleRadioChange}
                           />
                           <span className="mr-[25px]">50</span>
                         </label>
