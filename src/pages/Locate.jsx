@@ -75,7 +75,7 @@ function Locate() {
             >
               <MapPinIcon className="w-[18px]" /> Locate me
             </MainBtn>
-            <div className="flex flex-col px-[10px]">
+            <div className="flex flex-col px-[10px] lg:block">
               <button
                 className="flex items-center justify-center gap-[5px] rounded-md px-[25px] py-[8px] text-[1pc] leading-[24px] text-[#292929]"
                 onClick={toggleFilter}
@@ -83,28 +83,295 @@ function Locate() {
                 <AdjustmentsHorizontalIcon className="text-linkcolor w-[18px] flex-shrink-0" />
                 Filters
                 <ChevronDownIcon
-                  className={`${isFilterOpen ? 'rotate-180' : ''} linear w-[18px] flex-shrink-0 transition-all duration-[.25s]`}
+                  className={`${
+                    isFilterOpen ? 'rotate-180' : ''
+                  } w-[18px] flex-shrink-0 transition-transform duration-300 ease-in-out`}
                 />
               </button>
               {isFilterOpen ? (
                 <div className="pt-[40px]">
                   <fieldset>
-                    <legend>Services</legend>
-                    <ul>
-                      <li className="relative">
+                    <legend className="mb-[20px]">Services</legend>
+                    <ul className="mb-[2.5rem] flex flex-wrap">
+                      <li className="relative mb-[12px] flex items-center">
                         <input
-                          className="mr-[15px] h-[20px] w-[20px] opacity-0"
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
                           type="checkbox"
                           id="filterItemsInput0"
                         />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
                         <label
-                          className="form-options_field_description"
+                          className="mr-[25px] cursor-pointer pl-[15px]"
                           htmlFor="filterItemsInput0"
                         >
                           Mobile Deals
                         </label>
                       </li>
+                      <li className="relative mb-[12px] flex items-center">
+                        <input
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
+                          type="checkbox"
+                          id="filterItemsInput1"
+                        />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
+                        <label
+                          className="mr-[25px] cursor-pointer pl-[15px]"
+                          htmlFor="filterItemsInput1"
+                        >
+                          Drive Thru
+                        </label>
+                      </li>
+                      <li className="relative mb-[12px] flex items-center">
+                        <input
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
+                          type="checkbox"
+                          id="filterItemsInput2"
+                        />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
+                        <label
+                          className="mr-[25px] cursor-pointer pl-[15px]"
+                          htmlFor="filterItemsInput2"
+                        >
+                          McDelivery
+                        </label>
+                      </li>
+                      <li className="relative mb-[12px] flex items-center">
+                        <input
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
+                          type="checkbox"
+                          id="filterItemsInput3"
+                        />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
+                        <label
+                          className="mr-[25px] cursor-pointer pl-[15px]"
+                          htmlFor="filterItemsInput3"
+                        >
+                          Indoor PlayPlace
+                        </label>
+                      </li>
+                      <li className="relative mb-[12px] flex items-center">
+                        <input
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
+                          type="checkbox"
+                          id="filterItemsInput4"
+                        />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
+                        <label
+                          className="mr-[25px] cursor-pointer pl-[15px]"
+                          htmlFor="filterItemsInput4"
+                        >
+                          Wi-Fi
+                        </label>
+                      </li>
+                      <li className="relative mb-[12px] flex items-center">
+                        <input
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
+                          type="checkbox"
+                          id="filterItemsInput5"
+                        />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
+                        <label
+                          className="mr-[25px] cursor-pointer pl-[15px]"
+                          htmlFor="filterItemsInput5"
+                        >
+                          Outdoor PlayPlace
+                        </label>
+                      </li>
+                      <li className="relative mb-[12px] flex items-center">
+                        <input
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
+                          type="checkbox"
+                          id="filterItemsInput6"
+                        />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
+                        <label
+                          className="mr-[25px] cursor-pointer pl-[15px]"
+                          htmlFor="filterItemsInput6"
+                        >
+                          Indoor Dining
+                        </label>
+                      </li>
+                      <li className="relative mb-[12px] flex items-center">
+                        <input
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
+                          type="checkbox"
+                          id="filterItemsInput7"
+                        />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
+                        <label
+                          className="mr-[25px] cursor-pointer pl-[15px]"
+                          htmlFor="filterItemsInput7"
+                        >
+                          Gift Cards
+                        </label>
+                      </li>
+                      <li className="relative mb-[12px] flex items-center">
+                        <input
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
+                          type="checkbox"
+                          id="filterItemsInput8"
+                        />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
+                        <label
+                          className="mr-[25px] cursor-pointer pl-[15px]"
+                          htmlFor="filterItemsInput8"
+                        >
+                          Open 24/7
+                        </label>
+                      </li>
+                      <li className="relative mb-[12px] flex items-center">
+                        <input
+                          className="absolute mr-[15px] h-[20px] w-[20px] cursor-pointer opacity-0"
+                          type="checkbox"
+                          id="filterItemsInput9"
+                        />
+                        <div className="flex h-[20px] w-[20px] items-center justify-center rounded-md border-2 border-gray-400 bg-white">
+                          <svg
+                            className="check-icon hidden h-4 w-4 text-[#292929]"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <polyline points="4 11 8 15 16 6" />
+                          </svg>
+                        </div>
+                        <label
+                          className="mr-[25px] cursor-pointer pl-[15px]"
+                          htmlFor="filterItemsInput9"
+                        >
+                          Kiosk Audio Navigation
+                        </label>
+                      </li>
                     </ul>
+                    <fieldset>
+                      <div className="flex items-center">
+                        <legend className="mr-[14px]">miles</legend>
+                        <label className="flex items-center">
+                          <input
+                            className="locate_custom_radio mr-[15px]"
+                            checked
+                            name="radio-filter"
+                            type="radio"
+                          />
+                          <span className="mr-[25px]">5</span>
+                        </label>
+                        <label className="flex items-center">
+                          <input
+                            className="locate_custom_radio mr-[15px]"
+                            name="radio-filter"
+                            type="radio"
+                          />
+                          <span className="mr-[25px]">10</span>
+                        </label>
+                        <label className="flex items-center">
+                          <input
+                            className="locate_custom_radio mr-[15px]"
+                            name="radio-filter"
+                            type="radio"
+                          />
+                          <span className="mr-[25px]">20</span>
+                        </label>
+                        <label className="flex items-center">
+                          <input
+                            className="locate_custom_radio mr-[15px]"
+                            name="radio-filter"
+                            type="radio"
+                          />
+                          <span className="mr-[25px]">50</span>
+                        </label>
+                      </div>
+                    </fieldset>
                   </fieldset>
                 </div>
               ) : null}
