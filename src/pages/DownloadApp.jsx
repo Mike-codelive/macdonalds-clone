@@ -5,8 +5,10 @@ function DownloadApp() {
   return (
     <section>
       <div className="w-full max-w-[1170px] pt-[50px] lg:mx-auto lg:pt-[100px]">
-        <div className="mb-[17px] text-center text-[38px] font-bold leading-[56px] lg:w-[1194px] lg:text-[54px]">
-          <h1>McDonald’s App - Mobile Orders, McDonald's Rewards, and More</h1>
+        <div className="mb-[17px] text-center font-bold leading-[56px]">
+          <h1 className="text-[54px] leading-[56px]">
+            McDonald’s App - Mobile Orders, McDonald's Rewards, and More
+          </h1>
         </div>
         <div className="flex flex-wrap pt-[100px]">
           <div className="px-[15px] lg:w-[65.6%]">

@@ -29,8 +29,8 @@ function MobileNav({ isOpen, onClose }) {
   return isOpen ? (
     <div className="mobile_nav fixed inset-0 z-50 flex items-center justify-center lg:hidden">
       <div className="h-full w-full overflow-y-auto bg-white">
-        <div className="fixed w-full bg-white">
-          <NavLink onClick={onClose} to={'./main'}>
+        <div className="relative bg-white">
+          <NavLink className="inline-block" onClick={onClose} to={'./main'}>
             <img className="h-3pc w-3pc" src="./logo.jpg" alt="Logo" />
           </NavLink>
           <button
