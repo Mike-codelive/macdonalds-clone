@@ -299,3 +299,7 @@ input[type='checkbox']:checked + div .check-icon {
   background-color: #292929;
   border-radius: 50%;
 }
+
+.cmp-teaser__content {
+  box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.08);
+}

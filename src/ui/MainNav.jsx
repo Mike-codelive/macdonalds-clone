@@ -102,7 +102,7 @@ function MainNav() {
                   <MagnifyingGlassIcon className="w-full max-w-[20px]" /> Search
                 </span>
               </NavLink>
-              <NavLink className="custom_link not_active" to="locate">
+              <NavLink className="custom_link not_active" to="">
                 <span className="mr-[30px] hidden lg:flex">
                   <MapPinIcon className="w-full max-w-[20px] text-[#d90007]" />
                   <span className="text-[#006bae] underline">
