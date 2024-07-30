@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 function MenuModal() {
   return (
     <section className="menu_modal absolute left-0 right-0 top-auto z-[999999] hidden select-none bg-[#fff] lg:block">
@@ -129,9 +131,12 @@ function MenuModal() {
           </li>
         </ul>
         <div className="mt-[54px] flex w-full justify-center">
-          <button className="border- rounded border-[1px] border-solid border-[#adadad] px-[25px] py-[13px]">
+          <NavLink
+            to="menu"
+            className="border- rounded border-[1px] border-solid border-[#adadad] px-[25px] py-[13px]"
+          >
             View Full Menu
-          </button>
+          </NavLink>
         </div>
       </div>
     </section>
