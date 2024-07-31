@@ -13,6 +13,7 @@ import MenuModal from './MenuModal';
 function MainNav() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isFullMenuActive, setIsFullMenuActive] = useState(false);
   const menuRef = useRef(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -39,6 +40,7 @@ function MainNav() {
         links.forEach((l) => {
           l.classList.remove('active');
           l.parentElement.classList.remove('highlight');
+          setIsFullMenuActive(false);
         });
 
         if (link.classList.contains('not_active')) {
@@ -102,7 +104,7 @@ function MainNav() {
                   <MagnifyingGlassIcon className="w-full max-w-[20px]" /> Search
                 </span>
               </NavLink>
-              <NavLink className="custom_link not_active" to="">
+              <NavLink className="custom_link not_active" to="/locate">
                 <span className="mr-[30px] hidden lg:flex">
                   <MapPinIcon className="w-full max-w-[20px] text-[#d90007]" />
                   <span className="text-[#006bae] underline">
@@ -121,7 +123,9 @@ function MainNav() {
             </div>
           </div>
           <nav className="navbar_bottom_links mt-[26px] hidden [grid-column-end:5] [grid-column-start:2] [grid-row-start:2] lg:flex xl:whitespace-nowrap">
-            <div className="ml-[5px] mr-[25px] pb-[23px]">
+            <div
+              className={`${isFullMenuActive ? 'highlight font-bold' : ''} ml-[5px] mr-[25px] pb-[23px]`}
+            >
               <span
                 onClick={toggleMenu}
                 className={`${isMenuOpen ? 'font-bold' : ''} flex items-center`}
@@ -175,7 +179,11 @@ function MainNav() {
           <OrderModal isOpen={isModalOpen} onClose={closeModal}></OrderModal>
         </div>
       </header>
-      {isMenuOpen ? <MenuModal /> : null}
+      <MenuModal
+        isMenuOpen={isMenuOpen}
+        closeMenu={toggleMenu}
+        setActiveLink={setIsFullMenuActive}
+      />
       <Outlet />
     </>
   );
